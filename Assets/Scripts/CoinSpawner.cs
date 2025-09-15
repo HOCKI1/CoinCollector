@@ -20,6 +20,8 @@ public class CoinSpawner : MonoBehaviourExt
     private List<Coin> coins = new(); // Список монет в сцене
     private List<Matrix4x4> matrices = new(); // Список матриц для отрисовки
 
+    public CoinManager coinManager;
+
     [OnAwake]
     public void SpawnCoins()
     {
@@ -109,6 +111,7 @@ public class CoinSpawner : MonoBehaviourExt
 
                 coins.RemoveAt(i);
                 currentCoinsAmount--;
+                coinManager.AddCoin();
             }
         }
     }
